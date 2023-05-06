@@ -2,7 +2,9 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 
 test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const {container} = render(<App />);
+
+  const divtable = container.getElementsByClassName('divTable');
+
+  expect(divtable.length).toBe(1);
 });
